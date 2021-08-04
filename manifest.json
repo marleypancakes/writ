@@ -29,6 +29,9 @@
         "scripting"
     ],
     "host_permissions": [
+        "<all_urls>",
+        "https://web.archive.org/*",
+        "http://127.0.0.1:5000/*",
         "https://abcnews.go.com/*",
         "https://www.cnn.com/*",
         "https://www.nbcnews.com/*",
