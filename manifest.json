@@ -30,7 +30,6 @@
     ],
     "host_permissions": [
         "https://fast-fortress-24491.herokuapp.com/",
-        "http://127.0.0.1:5000/*",
         "http://www.google.com/*",
         "https://web.archive.org/*",
         "https://abcnews.go.com/*",

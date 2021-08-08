@@ -31,9 +31,7 @@ document.getElementById('main-switch').addEventListener('change', (e) => {
         chrome.storage.local.set({
             active: true
         })
-        chrome.runtime.sendMessage({
-            message: 'reload'
-        })
+
     } else {
         console.log(e.target.checked)
         document.getElementById('title-box').style.backgroundColor = '#FFE6E6';

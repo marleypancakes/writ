@@ -1,5 +1,4 @@
-// const baseUrl = "https://fast-fortress-24491.herokuapp.com/"
-const baseUrl = "http://127.0.0.1:5000/"
+const baseUrl = "https://fast-fortress-24491.herokuapp.com/"
 
 chrome.runtime.onInstalled.addListener(() => {
     chrome.storage.local.set({
@@ -19,12 +18,6 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
             target: { tabId: tabId },
             files: ["./static/css/foreground_styles.css"]
         })
-            // Async baby so .then this shit
-            // .then(() => {
-            //     const data = { site: tab.url };
-            //     postData(baseUrl, data)
-            //         .then((res) => console.log(res))
-            // })
             .then(() => {
                 console.log("INJECTED THE FOREGROUND STYLES")
                 // Inject the foreground script
@@ -37,22 +30,9 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
                     });
             })
             .catch(err => console.error(err))
+            return true;
     }
 });
-
-// chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-//     chrome.tabs.sendMessage(
-//         tabs[0].id,
-//         { message: 'get_page_text' },
-//         response => {
-//             if (response.message === 'success'){
-//                 console.log(response.payload);
-//                 postData(baseUrl, response.payload)
-//             }
-//         }
-//     );
-//     return true;
-// })
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.message === 'get_page_data') {
@@ -64,7 +44,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
                     message: 'success',
                     payload: res.body,
                     archiveUrl: res.archiveUrl
-                });
+                })
             } else if (res.message === 'paywall'){
                 chrome.runtime.sendMessage({
                     message: 'send_archive_url',

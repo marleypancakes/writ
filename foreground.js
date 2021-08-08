@@ -1,5 +1,10 @@
 let paywall = document.body.innerHTML.indexOf('paywall') !== -1
-let headline = document.querySelector('h1').innerText;
+let headline
+
+if(document.querySelector('h1')){
+    headline = document.querySelector('h1').innerText;
+}
+
 const page_data = {
     url: window.location.toString(),
     headline: headline,
@@ -28,17 +33,6 @@ if (window.location.toString().match(/www\.cnn\.com/)) {
 };
 console.log(page_data);
 
-// chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-//         if (request.message === 'get_page_data'){
-//             sendResponse({
-//                 message: 'success',
-//                 payload: page_data
-//             });
-//         };
-//         return true;
-//     }
-
-// )
 chrome.storage.local.get('active', data => {
     console.log(data);
     if (data.active) {
@@ -77,16 +71,6 @@ chrome.storage.local.get('active', data => {
                 })
             }
         })
-    }
-})
-
-
-
-
-chrome.runtime.onMessage.addListener((request) => {
-    if (request.message === 'reload') {
-        console.log(request.message);
-        window.location.reload;
     }
 })
 
