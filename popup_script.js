@@ -8,8 +8,14 @@ chrome.storage.local.get('active', data => {
         document.getElementById('title-box').style.backgroundColor = '#E6FFE6';
         document.querySelector('.mark').style.visibility = 'hidden';
         chrome.storage.local.get('archiveUrl', url => {
-            document.getElementById('archive-link').href = url.archiveUrl;
-            document.getElementById('archive-link').target = '_blank'
+            if (url.archiveUrl){
+                document.getElementById('archive-link').href = url.archiveUrl;
+                document.getElementById('archive-link').target = '_blank'
+            } else {
+                document.getElementById('archive-link').href = 'javascript: void(0)';
+                document.getElementById('archive-link').innerText = '❌ no archive found'
+                document.getElementById('archive-link').style.cursor = 'default'
+            }
         });
     } else {
         document.getElementById('main-switch').checked = false;
@@ -43,9 +49,7 @@ document.getElementById('main-switch').addEventListener('change', (e) => {
 })
 
 
-
-// chrome.runtime.onMessage.addListener((request) => {
-//     if (request.message === 'send_archive_url') {
-//         console.log(request.payload);
-//     };
-// });
+chrome.runtime.onMessage.addListener((request) => {
+    if (request.message === 'no archive') {
+    };
+});

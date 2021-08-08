@@ -71,9 +71,9 @@ chrome.storage.local.get('active', data => {
                     payload: res.body.archive_url
                 })
 
-            } else if (response.message === 'paywall') {
-                chrome.runtime.sendMessage({
-                    message: ''
+            } else if (response.message === 'failure') {
+                chrome.storage.local.set({
+                    archiveUrl: null
                 })
             }
         })
