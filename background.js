@@ -1,16 +1,20 @@
 const baseUrl = "https://fast-fortress-24491.herokuapp.com/"
 
 chrome.runtime.onInstalled.addListener(() => {
-    chrome.storage.local.set({
+    chrome.storage.sync.set({
         active: true,
         loaded: false,
-        archiveUrl: ''
+        archiveUrl: null,
+        autoLoad: true
     });
 });
 
 
 // Add listener for when the user's tabs are updated
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+    chrome.storage.local.set({
+        archiveUrl: null
+    })
     // Once the page is done loading
     if (changeInfo.status === 'complete' && /^http/.test(tab.url)) {
         // Inject the CSS
@@ -45,19 +49,9 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
                     payload: res.body,
                     archiveUrl: res.archiveUrl
                 })
-            } else if (res.message === 'paywall'){
-                chrome.runtime.sendMessage({
-                    message: 'send_archive_url',
-                    payload: res.archive_url
-                })
-                sendResponse({
-                    message: 'paywall',
-                    payload: res.body
-                })
             } else if (res.message === 'archive not found') {
                 sendResponse({
-                    message: 'failure',
-                    payload: res.body
+                    message: 'failure'
                 })
             }
             

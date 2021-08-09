@@ -18,6 +18,24 @@ const archive_data = {
     body: []
 }
 
+
+const loadChanges = (headline, body) => {
+    document.querySelector('h1').innerHTML = headline;
+
+    if (window.location.toString().match(/www\.cnn\.com/)) {
+        paragraphs = document.querySelectorAll('.zn-body__paragraph');
+        for (i = 0; i < paragraphs.length; i++) {
+            paragraphs[i].innerHTML = body[i];
+        }
+    } else {
+        paragraphs = document.querySelectorAll('p');
+        for (i = 0; i < paragraphs.length; i++) {
+            paragraphs[i].innerHTML = body[i];
+        }
+    }
+}
+
+
 // If it's a CNN article, get the article body from their specific body paragraph class
 if (window.location.toString().match(/www\.cnn\.com/)) {
     const article_body = document.querySelectorAll('p.zn-body__paragraph, div.zn-body__paragraph')
@@ -33,7 +51,7 @@ if (window.location.toString().match(/www\.cnn\.com/)) {
 };
 console.log(page_data);
 
-chrome.storage.local.get('active', data => {
+chrome.storage.sync.get('active', data => {
     console.log(data);
     if (data.active) {
         chrome.runtime.sendMessage({
@@ -42,31 +60,39 @@ chrome.storage.local.get('active', data => {
         }, response => {
             console.log(response.message);
             if (response.message === 'success') {
-                chrome.storage.local.set({
+                chrome.storage.sync.set({
                     loaded: true,
                     archiveUrl: response.archiveUrl
                 })
                 console.log(response.payload);
-                document.querySelector('h1').innerHTML = response.payload.headline;
 
-                if (window.location.toString().match(/www\.cnn\.com/)) {
-                    paragraphs = document.querySelectorAll('.zn-body__paragraph');
-                    for (i = 0; i < paragraphs.length; i++) {
-                        paragraphs[i].innerHTML = response.payload.body[i];
+                chrome.storage.sync.get('autoLoad', data => {
+                    if (data.autoLoad === true) {
+
+                        loadChanges(response.payload.headline, response.payload.body);
+
+                        chrome.runtime.sendMessage({
+                            message: 'send_archive_url',
+                            payload: res.body.archive_url
+                        })
+                    } else {
+                        chrome.runtime.sendMessage({
+                            message: 'send_archive_url',
+                            payload: res.body.archive_url
+                        })
+                        chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+                            if(request.message === 'load changes'){
+                                loadChanges(response.payload.headline, response.payload.body);
+                                sendResponse({
+                                    message: 'changes loaded'
+                                })
+                            }
+                        })
                     }
-                } else {
-                    paragraphs = document.querySelectorAll('p');
-                    for (i = 0; i < paragraphs.length; i++) {
-                        paragraphs[i].innerHTML = response.payload.body[i];
-                    }
-                }
-                chrome.runtime.sendMessage({
-                    message: 'send_archive_url',
-                    payload: res.body.archive_url
                 })
 
             } else if (response.message === 'failure') {
-                chrome.storage.local.set({
+                chrome.storage.sync.set({
                     archiveUrl: null
                 })
             }

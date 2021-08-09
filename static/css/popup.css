@@ -60,16 +60,22 @@ p{
 }   
 
 hr {
-  margin-top: 0 !important;
-  margin-left: 0;
-  margin-right: 0;
+  margin: 0;
   width: 100%;
 }
 
-.list-item {
+.popup-link {
     flex: 1;
+    width: 100%;
     margin-right: auto;
-    margin-left: 10px;
+    justify-content: center;
+}
+
+.popup-link:hover {
+    background-color: #cfcfcf;
+}
+.popup-link a{
+  margin-left: 10px;
 }
 
 .support-link-container{
