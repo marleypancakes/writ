@@ -36,7 +36,7 @@ chrome.storage.sync.get('autoLoad', data => {
         loadButton.appendChild(loadLink);
         document.body.appendChild(loadButton)
 
-        loadButton.onclick = () => {
+        const loadChanges = async function() {
             console.log('clicked!')
             chrome.runtime.sendMessage({
                 message: 'load changes'
@@ -44,8 +44,11 @@ chrome.storage.sync.get('autoLoad', data => {
                 if(response.message === 'changes loaded'){
                     loadButtonContents.nodeValue = "✔️ changes loaded"
                 }
+                return true;
             })
         }
+        
+        loadButton.onclick = loadChanges
     }
 })
 
