@@ -87,7 +87,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+<!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
 Headliner is an open-source tool that allows you to track changes in news articles since their original publication.  Its goal is to improve media literacy by giving consumers access to more data about the content they're consuming.
 
