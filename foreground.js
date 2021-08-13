@@ -80,7 +80,7 @@ chrome.storage.sync.get('active', data => {
                             message: 'send_archive_url',
                             payload: res.body.archive_url
                         })
-                        chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+                        chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
                             if(request.message === 'load changes'){
                                 loadChanges(response.payload.headline, response.payload.body);
                                 sendResponse({
