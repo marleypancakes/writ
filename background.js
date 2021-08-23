@@ -1,5 +1,3 @@
-const baseUrl = "https://fast-fortress-24491.herokuapp.com/"
-
 chrome.runtime.onInstalled.addListener(() => {
     chrome.storage.sync.set({
         active: true,
@@ -23,15 +21,15 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
             files: ["./static/css/foreground_styles.css"]
         })
             .then(() => {
-                console.log("INJECTED THE FOREGROUND STYLES")
+                chrome.scripting.executeScript({
+                    target: { tabId: tabId },
+                    files: ["./static/JS/jquery-3.6.0.min.js"]
+                })
                 // Inject the foreground script
                 chrome.scripting.executeScript({
                     target: { tabId: tabId },
                     files: ["./foreground.js"]
                 })
-                    .then(() => {
-                        console.log("INJECTED THE FOREGROUND SCRIPT")
-                    });
             })
             .catch(err => console.error(err))
             return true;
@@ -40,7 +38,8 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.message === 'get_page_data') {
-        postData(baseUrl, request.payload)
+        console.log(request.payload)
+        postData("https://fast-fortress-24491.herokuapp.com/", request.payload)
         .then((res) => {
             console.log(res)
             if(res.message === 'success'){
@@ -54,7 +53,6 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
                     message: 'failure'
                 })
             }
-            
         })
         .catch(err => console.error(err))
         return true;
