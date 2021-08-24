@@ -39,7 +39,9 @@
   <h3 align="center">Writ</h3>
 
   <p align="center">
-  An open-source tool for tracking changes on the web
+  Writ is an extension that allows users to view changes made to news articles after their first publication.  The goals of this project are to increase transparency on the web as well as to empower consumers by providing them with a more complete picture of the content they're reading.
+
+<a href="https://www.freeprivacypolicy.com/live/e870a058-2ba9-457e-b0a0-4053a4b2805e"><strong>Privacy Policy»</strong></a>
     <br />
     <a href="https://github.com/reyaw/headliner"><strong>Explore the docs »</strong></a>
     <br />
