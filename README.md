@@ -39,7 +39,7 @@
   <h3 align="center">Writ</h3>
 
   <p align="center">
-  Writ is an extension that allows users to view changes made to news articles after their first publication.  The goals of this project are to increase transparency on the web as well as to empower consumers by providing them with a more complete picture of the content they're reading.
+  Writ is an extension that allows users to view changes made to news articles after their first publication.  The goals of this project are to increase transparency on the web as well as empower readers by providing them with a more complete picture of the content they're reading.
 
 <a href="https://www.freeprivacypolicy.com/live/e870a058-2ba9-457e-b0a0-4053a4b2805e"><strong>Privacy Policy»</strong></a>
     <br />
@@ -89,7 +89,7 @@
 
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
-Writ is an open-source tool that allows you to track changes in news articles since their original publication.  Its goal is to improve media literacy by giving consumers access to more data about the content they're consuming.
+Writ is an open-source tool that allows you to track changes in news articles since their original publication.  Its goal is to improve media literacy by giving readers access to more data about the content they're consuming.
 
 
 ### Built With
