@@ -66,13 +66,14 @@
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
-<!--     <li>
+<li>
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
+    <!--     
     <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
@@ -100,7 +101,21 @@ Writ is an open-source tool that allows you to track changes in news articles si
 <!-- * []()
 * []() -->
 
+## Getting Started
 
+### Prerequisites
+
+* Chromium-based browser (Google Chrome or Microsoft Edge)
+
+### Installation
+
+1) At the top of this page, select "Code > Download as .ZIP"
+
+2) Unzip the file using an unarchiver tool 
+
+3) Go to "[BROWSER]://extensions/" and enable Developer Mode
+
+4) Click the "Load Unpacked Extension" button and select the unzipped folder to install the extension.
 
 <!-- CONTACT -->
 ## Contact
