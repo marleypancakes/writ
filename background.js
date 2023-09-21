@@ -39,7 +39,7 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.message === 'get_page_data') {
         console.log(request.payload)
-        postData("https://fast-fortress-24491.herokuapp.com/", request.payload)
+        postData("https://writ-server.onrender.com/", request.payload)
         .then((res) => {
             console.log(res)
             if(res.message === 'success'){
