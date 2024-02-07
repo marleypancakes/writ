@@ -1,17 +1,3 @@
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Thanks again! Now go create something AMAZING! :D
-***
-***
-***
-*** To avoid retyping too much info. Do a search and replace for the following:
-*** reyaw, headliner, twitter_handle, reyaw@protonmail.com, Headliner, project_description
--->
-
-
-
 <!-- PROJECT SHIELDS -->
 <!--
 *** I'm using markdown "reference style" links for readability.
@@ -32,7 +18,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/reyaw/writ">
+  <a href="https://github.com/marleypancakes/writ">
     <img src="static/images/writ_logo_48.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -43,14 +29,12 @@
 
 <a href="https://www.freeprivacypolicy.com/live/e870a058-2ba9-457e-b0a0-4053a4b2805e"><strong>Privacy Policy»</strong></a>
     <br />
-    <a href="https://github.com/reyaw/headliner"><strong>Explore the docs »</strong></a>
     <br />
-    <br />
-    <a href="https://github.com/reyaw/headliner">View Demo</a>
+    <a href="https://github.com/marleypancakes/writ">View Demo</a>
     ·
-    <a href="https://github.com/reyaw/headliner/issues">Report Bug</a>
+    <a href="https://github.com/marleypancakes/writ/issues">Report Bug</a>
     ·
-    <a href="https://github.com/reyaw/headliner/issues">Request Feature</a>
+    <a href="https://github.com/marleypancakes/writ/issues">Request Feature</a>
   </p>
 </p>
 
@@ -120,9 +104,9 @@ Writ is an open-source tool that allows you to track changes in news articles si
 <!-- CONTACT -->
 ## Contact
 
-Reya Wallace -  reyaw@protonmail.com
+Marley Wallace -  reyaw@protonmail.com
 
-Project Link: [https://github.com/reyaw/writ](https://github.com/reyaw/writ)
+Project Link: [https://github.com/reyaw/writ](https://github.com/marleypancakes/writ)
 
 
 
@@ -130,15 +114,15 @@ Project Link: [https://github.com/reyaw/writ](https://github.com/reyaw/writ)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/reyaw/repo.svg?style=for-the-badge
-[contributors-url]: https://github.com/reyaw/repo/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/reyaw/repo.svg?style=for-the-badge
-[forks-url]: https://github.com/reyaw/repo/network/members
-[stars-shield]: https://img.shields.io/github/stars/reyaw/repo.svg?style=for-the-badge
-[stars-url]: https://github.com/reyaw/repo/stargazers
-[issues-shield]: https://img.shields.io/github/issues/reyaw/repo.svg?style=for-the-badge
-[issues-url]: https://github.com/reyaw/repo/issues
-[license-shield]: https://img.shields.io/github/license/reyaw/repo.svg?style=for-the-badge
-[license-url]: https://github.com/reyaw/repo/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/marleypancakes/repo.svg?style=for-the-badge
+[contributors-url]: https://github.com/marleypancakes/repo/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/marleypancakes/repo.svg?style=for-the-badge
+[forks-url]: https://github.com/marleypancakes/repo/network/members
+[stars-shield]: https://img.shields.io/github/stars/marleypancakes/repo.svg?style=for-the-badge
+[stars-url]: https://github.com/marleypancakes/repo/stargazers
+[issues-shield]: https://img.shields.io/github/issues/marleypancakes/repo.svg?style=for-the-badge
+[issues-url]: https://github.com/marleypancakes/repo/issues
+[license-shield]: https://img.shields.io/github/license/marleypancakes/repo.svg?style=for-the-badge
+[license-url]: https://github.com/marleypancakes/repo/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/reyaw
+[linkedin-url]: https://linkedin.com/in/marleywallace
